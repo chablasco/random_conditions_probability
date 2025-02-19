@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CB Random Conditions Probability</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    let fg = 0;
+    let bg = 255;
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      rectMode(CENTER);
+      frameRate(20);
+    }
+
+    function draw() {
+      if (random(1) < 0.5) {
+        fg = 0;
+        bg = 255;
+      } else {
+        fg = 255;
+        bg = 0;
+      }
+
+      background(bg);
+      fill(fg);
+      noStroke();
+
+      if (random(1) < 0.5) {
+        ellipse(width / 2, height / 2, 600);
+      } else {
+        rect(width / 2, height / 2, 600, 600);
+      }
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+  </script>
+</body>
+</html>
