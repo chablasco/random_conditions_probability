@@ -44,6 +44,9 @@
         rect(width / 2, height / 2, 600, 600);
       }
     }
+   function mousePressed() {
+      fullscreen(!fullscreen());
+    }
 
     function windowResized() {
       resizeCanvas(windowWidth, windowHeight);
